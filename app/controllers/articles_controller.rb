@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
 
-    redirect_to root_path
+    redirect_to root_path, notice: 'Article was successfully destroyed.'
   end
 
   private
@@ -53,5 +53,6 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
+    authorize @article
   end
 end

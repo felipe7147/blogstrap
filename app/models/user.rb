@@ -1,14 +1,16 @@
 class User < ApplicationRecord
+  rolify
+ 
   has_many :articles, dependent: :destroy
 
   # Include default devise modules. Others available are:
-  #  :lockable, :timeoutable,  and :omniauthable
-  
+  # :lockable, :timeoutable, and :omniauthable
+
   devise :confirmable,
-         :database_authenticatable, 
+         :database_authenticatable,
          :recoverable,
-         :registerable, 
-         :rememberable, 
+         :registerable,
+         :rememberable,
          :trackable,
          :validatable
 end
