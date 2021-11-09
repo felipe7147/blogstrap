@@ -1,6 +1,6 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -20,7 +20,5 @@ module Blogstrap
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = { address: '127.0.0.1', :port => 1025 }
   end
 end
